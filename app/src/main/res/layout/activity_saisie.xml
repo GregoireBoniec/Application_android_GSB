@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnAddDeb"
+        android:layout_width="200px"
+        android:layout_height="110px"
+        android:layout_alignBaseline="@+id/txtRecupDebut"
+        android:layout_alignBottom="@+id/txtRecupDebut"
+        android:layout_alignLeft="@+id/btnAddArr"
+        android:layout_alignStart="@+id/btnAddArr"
+        android:text="Ajout"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/btnAddArr"
+        android:layout_width="200px"
+        android:layout_height="110px"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/groupe"
+        android:layout_toRightOf="@+id/groupe"
+        android:text="Ajout"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure d'arrivée :"
+        android:textSize="20sp"
+        android:layout_marginTop="105dp"
+        android:layout_below="@+id/spinMedecin"
+        android:layout_alignLeft="@+id/txtMedecin"
+        android:layout_alignStart="@+id/txtMedecin" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure début d'entretien :"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure départ cabinet :"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="15dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinCabinet"
+        android:layout_alignTop="@+id/txtCabinet"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txtRdv"
+        android:layout_alignLeft="@+id/spinMedecin"
+        android:layout_alignStart="@+id/spinMedecin" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinMedecin"
+        android:layout_alignTop="@+id/txtMedecin"
+        android:layout_toRightOf="@+id/txtMedecin"
+        android:layout_toEndOf="@+id/txtMedecin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:text="Médecin :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:id="@+id/txtMedecin"
+        android:textSize="20sp"
+        android:layout_below="@+id/spinCabinet"
+        android:layout_alignLeft="@+id/txtCabinet"
+        android:layout_alignStart="@+id/txtCabinet" />
+
+    <TextView
+        android:text="Cabinet :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/txtCabinet"
+        android:textSize="20sp"
+        android:layout_marginTop="129dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Valider la fiche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnValider"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
+
+    <RadioGroup
+        android:id="@+id/groupe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignEnd="@+id/btnValider"
+        android:layout_alignRight="@+id/btnValider"
+        android:layout_toEndOf="@+id/btnValider"
+        android:layout_toRightOf="@+id/btnValider" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGRDV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtRdv"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/rdBtnOui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oui"
+            />
+
+        <RadioButton
+            android:id="@+id/rdBtnNon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtRdv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtMedecin"
+        android:layout_alignStart="@+id/txtMedecin"
+        android:layout_centerVertical="true"
+        android:text="Rendez-vous :"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtRecupArr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/radioGRDV"
+        android:layout_alignStart="@+id/radioGRDV"
+        android:text="D + H" />
+
+    <Button
+        android:id="@+id/btnAddDep"
+        android:layout_width="200px"
+        android:layout_height="110px"
+        android:text="Ajout"
+        android:textSize="10sp"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/btnAddDeb"
+        android:layout_alignStart="@+id/btnAddDeb" />
+
+    <TextView
+        android:id="@+id/txtRecupDebut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="D + H" />
+
+    <TextView
+        android:id="@+id/txtRecupDepart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D + H"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toLeftOf="@+id/btnAddArr"
+        android:layout_toStartOf="@+id/btnAddArr" />
+
+</RelativeLayout>
