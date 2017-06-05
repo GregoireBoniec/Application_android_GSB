@@ -2,6 +2,7 @@ package com.example.gregoireboniec.application_gsb;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 /**
  * Created by gregoireboniec on 04/05/2017.
@@ -27,6 +29,7 @@ public class SaisieActivity extends AppCompatActivity
     private Button btnAjoutArr, btnAjoutDeb, btnAjoutDep;
     private TextView txtArrive,txtDebut,txtDepart;
     int year_x,mont_x,day_x;
+    int hour_x,min_x;
     static final int DIALOG_ID = 0;
 
 
@@ -103,20 +106,6 @@ public class SaisieActivity extends AppCompatActivity
 
 
 
-    @Override
-    protected Dialog onCreateDialog(int id)
-    {
-        if (id == DIALOG_ID)
-            return new DatePickerDialog(SaisieActivity.this, dpickerListener, year_x ,mont_x,day_x);
-
-
-        return null;
-
-
-    }
-
-
-
 
 
     private DatePickerDialog.OnDateSetListener dpickerListener = new DatePickerDialog.OnDateSetListener()
@@ -135,4 +124,32 @@ public class SaisieActivity extends AppCompatActivity
         }
 
     };
+
+    private TimePickerDialog.OnTimeSetListener tpickerListener = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute)
+        {
+
+            hour_x = hourOfDay;
+            min_x = minute;
+
+            txtArrive.setText(hour_x + ":" + min_x);
+
+        }
+    };
+
+    @Override
+    protected Dialog onCreateDialog(int id)
+    {
+        if (id == DIALOG_ID)
+            return new TimePickerDialog(SaisieActivity.this, tpickerListener, hour_x,);
+
+        return null;
+    }
+
+
+
+
+
+
 }
